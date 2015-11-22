@@ -25,6 +25,14 @@ module AngularRails
     config.assets.paths << Rails.root.join("vendor","assets","bower_components")
     config.assets.paths << Rails.root.join("vendor","assets","bower_components",
                                                 "bootstrap-sass-official","assets","fonts")
+    config.assets.paths << Rails.root.join("vendor","assets","bower_components","bootstrap-sass-official",
+                                            "assets","fonts")
     config.active_record.raise_in_transactional_callbacks = true
+    Rails.application.config.assets.precompile += %w( bootstrap-sass-official/assets/fonts/bootstrap/glyphicons-halflings-regular.eot )
+    Rails.application.config.assets.precompile += %w( bootstrap-sass-official/assets/fonts/bootstrap/glyphicons-halflings-regular.woff )
+    Rails.application.config.assets.precompile += %w( bootstrap-sass-official/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2 )
+    Rails.application.config.assets.precompile += %w( bootstrap-sass-official/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf )
+    Rails.application.config.assets.precompile += %w( bootstrap-sass-official/assets/fonts/bootstrap/glyphicons-halflings-regular.svg )
+
   end
 end
